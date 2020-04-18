@@ -1,33 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>National Park Search</title>
-    <link href="styles.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <h2>Search for state parks by searching 2 digit state code</h2>
-    <form>
-      <label for='js-search-term'>State</label>
-      <input id='js-search-term' type='text' name ='js-search-term' placeholder="Enter 2 digit state code"><br><br>
-      <label for='max-results'>Enter Max Results</label>
-      <input id='max-results' type='number' name='max-results' placeholder="Default 10 Results"><br><br>
-      <input type='submit' value='Submit'>
-    </form>
 
-      <section class='results hidden'>
-        <h2>Here are your search results.</h2>
-        <ul id='results-list'></ul>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Homeschooling App</title>
+  <link href="styles.css" rel="stylesheet" type="text/css" />
+</head>
+<nav>
+  <p>Topics by Grade</p>
+  <ul>
+    <li><a class="active" href="#pre_k">Pre-K</a></li>
+    <li><a href="#1st_grade">1st Grade</a></li>
+    <li><a href="#2nd_grade">2nd Grade</a></li>
+    <li><a href="#3rd_grade">3rd Grade</a></li>
+  </ul>
 
-      </section>
-
-    
+</nav>
 
 
+<body>
+  <h2>Home School Your Kids</h2>
+  <form>
+    <label for='js-search-term'>Enter Term to Search</label>
+    <input id='js-search-term' type='text' name='js-search-term' placeholder="What do you want to learn?"><br><br>
+    <label for='additional_search_terms'>Extra stuff to search</label>
+    <input id='js-search-term' type='text' name='js-search-term' placeholder="What do you want to learn?"><br><br>
+
+    <input id='submit_button' type='submit' value='Submit'>
+  </form>
+  <section class='usage_guide'>
+    <p>This is how you use this</p>
+
+  </section>
+
+  <section class='results '>
+    <h2>Here are your search results.</h2>
+    <ul id='results-list'></ul>
+  </section>
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <script src="index.js"></script>
-  </body>
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+  <script src="index.js"></script>
+</body>
+
 </html>
