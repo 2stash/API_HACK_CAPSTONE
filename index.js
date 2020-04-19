@@ -1,41 +1,58 @@
-
-// function resultsHTML(responseJson){
-//   console.log(responseJson.items[0].snippet.thumbnails.high.url)
-//   return
-//   `<img src='${responseJson.items[0].snippet.thumbnails.high.url}'>`
-// }
-
-function displayResults(responseJson){
-console.log(responseJson);
-console.log(responseJson.items[0].id.videoId);  
-console.log(responseJson.items[0].snippet.thumbnails.high.url)
-let htmlUpdate = `<img src='${responseJson.items[0].snippet.thumbnails.high.url}'>`
-console.log(htmlUpdate)
-$('#results-list').html(htmlUpdate);
+function resultsHTML(responseJson){
+  return
+  `<img src='${responseJson.items[0].snippet.thumbnails.high.url}'>`
 };
 
+function displayResults(responseJson) {
+  let htmlUpdate ='';
+  for (let i=0;i<responseJson.items.length;i++){
 
-// https://www.youtube.com/watch?v=rCtm5ZAy9Eo
+  htmlUpdate +=
+    `
+<a href='https://www.youtube.com/watch?v=${responseJson.items[i].id.videoId}' target='_blank'>
+<img src='${responseJson.items[i].snippet.thumbnails.high.url}'>
+</a>
+`}
+  $('#results-list').html(htmlUpdate);
+  $('.results').removeClass('hidden');
+};
+
+function formatQueryParams(params) {
+  const queryItems = Object.keys(params)
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+  return queryItems.join('&');
+}
+
 function gitApiCall(searchTerm) {
   const apiKey = 'AIzaSyD1EP6ZMbHiMp_fLWaVB4zbf36IuqIGVSY';
-  fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q=igneous%20rocks&safeSearch=moderate&key=AIzaSyD1EP6ZMbHiMp_fLWaVB4zbf36IuqIGVSY&videoCategoryId=27&type=video`)
+  const searchURL = 'https://www.googleapis.com/youtube/v3/search';
+  const params = {
+    key: apiKey,
+    part: 'snippet',
+    q: searchTerm,
+    safeSearch: 'moderate',
+    videoCategoryId: 27,
+    type: 'video',
+    order: 'viewCount'
+  };
+  const queryString = formatQueryParams(params);
+  const url = searchURL + '?' + queryString;
+   fetch(url)
     .then(response => {
-        if (response.ok) {
+      if (response.ok) {
         return response.json();
       }
       // DISPLAY ERRORS if the server connection works but the json data is broken
       throw new Error(response.statusText);
     })
-    .then(responseJson => 
+    .then(responseJson =>
       displayResults(responseJson))
-   .catch(error => console.log('Something went wrong. Try again later.',error));
+    .catch(error => console.log('Something went wrong. Try again later.', error));
 };
 
-
-function clearHTML(){
+function clearHTML() {
   $('#results-list').html('');
 }
-
 
 function watchForm() {
   $('form').submit(event => {
