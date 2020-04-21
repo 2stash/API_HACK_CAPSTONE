@@ -3,7 +3,7 @@
 }
 
 body{
-  padding:0;
+  padding: 0px;
   margin:0;
 }
 nav{
@@ -44,7 +44,7 @@ li a:hover:not(.active) {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  width: 80%;
+  width: ;
 }
 
 .hidden{
@@ -52,12 +52,74 @@ li a:hover:not(.active) {
 }
 
 .usage_guide{
-  margin-top:15px;
-  margin-left: auto;
-  margin-right: auto;
-  width:80%;
+  margin: auto;
+  padding: 0px 40px;
+  width:40%;
   height:150px;
+  font-size: 14px;
   border-style: solid;
+
+}
+
+form {
+  text-align: center;
+}
+
+h3,
+h1 {
+  text-align: center;
+
+}
+
+p {
+  text-align: left;
+}
+
+.results {
+  text-align: center;
+  
+}
+
+#results-list {
+  background-color: white;
+}
+
+@media screen and (min-width: 700px) { 
+
+  #page {
+    display: flex;
+    position: absolute;
+    
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    text-align: left;
+    padding-left: 40px;
+    position: relative;
+    left: 5%;
+  }
+
+  .usage_guide,
+  .results {
+    
+  }
+
+
+
+  
+  /*.usage_guide {
+    position: relative;
+  
+  }
+
+  .result {
+    position: relative;
+    ;
+  }*/
+
 }
 
 /* .active {

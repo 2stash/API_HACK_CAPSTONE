@@ -3,42 +3,56 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Homeschooling App</title>
   <link href="styles.css" rel="stylesheet" type="text/css" />
+
 </head>
 <nav>
-  <p>Topics by Grade</p>
-  <ul>
+  <ul class="navbar">
     <li><a class="active" href="#pre_k">Pre-K</a></li>
-    <li><a href="#1st_grade">1st Grade</a></li>
-    <li><a href="#2nd_grade">2nd Grade</a></li>
-    <li><a href="#3rd_grade">3rd Grade</a></li>
+    <li><a class="first" href="">1st Grade</a></li>
+    <li><a class="second" href="#2nd_grade">2nd Grade</a></li>
+    <li><a class="third" href="#3rd_grade">3rd Grade</a></li>
   </ul>
 
 </nav>
 
 
 <body>
-  <h2>Home School Your Kids</h2>
+  <h1>Home School Your Kids!</h1>
+
+  <div id="page">
   <form>
-    <label for='js-search-term'>Enter Term to Search</label>
+    <br><br>
+    <label for='js-search-term'>Search a topic!</label>
     <input id='js-search-term' type='text' name='js-search-term' placeholder="What do you want to learn?"><br><br>
     <label for='additional_search_terms'>Extra stuff to search</label>
     <input id='js-search-term' type='text' name='js-search-term' placeholder="What do you want to learn?"><br><br>
 
-    <input id='submit_button' type='submit' value='Submit'>
+    <input id='submit_button' type='submit' value="Let's Go!">
   </form>
+ 
+
+  <br><br>
+
+  
   <section class='usage_guide'>
-    <p>This is how you use this</p>
+    <h3>Welcome!</h3>
+    <p>This handy dandy app was created to help make things easier when homeschooling your little ones.
+      Feel free to search any topic using the search bar above to get an explanation of the topic as well 
+      as related videos. Don't have a specific topic in mind? No problem! Click on the grades above to get suggested
+      learning material for students on that grade level.</p>
 
   </section>
 
   <section class='results hidden'>
-    <h2>Here are your search results.</h2>
+    <h2>Here are your search results!</h2>
     <ul id='results-list'></ul>
+    <br>
+    <input id='submit_button' type='submit' value="Load More Results">
   </section>
-
+</div>
 
 
 

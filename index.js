@@ -10,11 +10,12 @@ function displayResults(responseJson) {
   htmlUpdate +=
     `
 <a href='https://www.youtube.com/watch?v=${responseJson.items[i].id.videoId}' target='_blank'>
-<img src='${responseJson.items[i].snippet.thumbnails.high.url}'>
+<img src='${responseJson.items[i].snippet.thumbnails.high.url}' width= 15%>
 </a>
 `}
   $('#results-list').html(htmlUpdate);
   $('.results').removeClass('hidden');
+  $('.usage_guide').addClass('hidden');
 };
 
 function formatQueryParams(params) {
@@ -22,6 +23,9 @@ function formatQueryParams(params) {
     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
   return queryItems.join('&');
 }
+
+
+
 
 function gitApiCall(searchTerm) {
   const apiKey = 'AIzaSyD1EP6ZMbHiMp_fLWaVB4zbf36IuqIGVSY';
@@ -50,6 +54,7 @@ function gitApiCall(searchTerm) {
     .catch(error => console.log('Something went wrong. Try again later.', error));
 };
 
+
 function clearHTML() {
   $('#results-list').html('');
 }
@@ -58,8 +63,9 @@ function watchForm() {
   $('form').submit(event => {
     event.preventDefault();
     const searchTerm = $('#js-search-term').val();
-    clearHTML();
+    //clearHTML();
     gitApiCall(searchTerm);
+    navBar();
   });
 }
 $(watchForm);
