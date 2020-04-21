@@ -109,7 +109,121 @@ p {
 
 
 
+
+
+
+/* *{
+  box-sizing: border-box;
+}
+
+body{
+  padding: 0px;
+  margin:0;
+}
+nav{
+  background-color: #333;
+}
+
+nav p{
+  text-align: center;
+  color:white;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+nav li {
+  width: 25%;
+  float: left;
+}
+
+nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav li a:hover:not(.active) {
+  background-color: #111;
+}
+
+#submit_button {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: ;
+}
+
+.hidden{
+  display: none;
+}
+
+.usage_guide{
+  margin: auto;
+  padding: 0px 40px;
+  width:40%;
+  height:150px;
+  font-size: 14px;
+  border-style: solid;
+
+}
+
+form {
+  text-align: center;
+}
+
+h3,
+h1 {
+  text-align: center;
+
+}
+
+p {
+  text-align: left;
+}
+
+.results {
+  text-align: center;
   
+}
+
+#results-list {
+  background-color: white;
+}
+
+@media screen and (min-width: 700px) { 
+
+  #page {
+    display: flex;
+    position: absolute;
+    
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    text-align: left;
+    padding-left: 40px;
+    position: relative;
+    left: 5%;
+  }
+
+  .usage_guide,
+  .results {
+    
+  }
+
+
+
+  */
   /*.usage_guide {
     position: relative;
   
@@ -121,6 +235,14 @@ p {
   }*/
 
 }
+
+/*.video{
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:80%;
+}*/
 
 /* .active {
   background-color: #4CAF50;

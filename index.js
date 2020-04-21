@@ -1,18 +1,31 @@
-function resultsHTML(responseJson){
-  return
-  `<img src='${responseJson.items[0].snippet.thumbnails.high.url}'>`
+function resultsHTML(responseJson) {
+  return `<img src='${responseJson.items[0].snippet.thumbnails.high.url}'>`
 };
 
 function displayResults(responseJson) {
-  let htmlUpdate ='';
-  for (let i=0;i<responseJson.items.length;i++){
+  let htmlUpdate = '';
+  console.log(responseJson);
+  for (let i = 0; i < responseJson.items.length; i++) {
 
-  htmlUpdate +=
+    htmlUpdate +=
     `
-<a href='https://www.youtube.com/watch?v=${responseJson.items[i].id.videoId}' target='_blank'>
+    <a href='https://www.youtube.com/watch?v=${responseJson.items[i].id.videoId}' target='_blank'>
 <img src='${responseJson.items[i].snippet.thumbnails.high.url}' width= 15%>
 </a>
-`}
+    `
+/*      
+<section class='videos'>
+<hr>
+<h2>${responseJson.items[i].snippet.title}</h2>
+<p>${responseJson.items[i].snippet.description}</p>
+<a href='https://www.youtube.com/watch?v=${responseJson.items[i].id.videoId}' target='_blank'>
+<img src='${responseJson.items[i].snippet.thumbnails.high.url}' class='video' width= 15%>
+</a>
+</section>*/
+
+
+
+  }
   $('#results-list').html(htmlUpdate);
   $('.results').removeClass('hidden');
   $('.usage_guide').addClass('hidden');
@@ -23,6 +36,7 @@ function formatQueryParams(params) {
     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
   return queryItems.join('&');
 }
+// CAUQAA
 
 
 
@@ -33,15 +47,21 @@ function gitApiCall(searchTerm) {
   const params = {
     key: apiKey,
     part: 'snippet',
-    q: searchTerm,
+    q: 'learn about ' + searchTerm, // added 'learn about' which is helping get educational results instead of dumb kids songs
     safeSearch: 'moderate',
     videoCategoryId: 27,
     type: 'video',
-    order: 'viewCount'
+    // pageToken: nextPageToken,
+
+    regionCode:'US',
+    order: 'relevance', // tried searching by viewcount, which got some bad kid videos with 100 mil views. relevance seems to be the best search, when added with Learn about
+    // Tried adding video duration to medium, did not seem to help filter out bad results.
+    // videoDuration:'medium'
   };
   const queryString = formatQueryParams(params);
   const url = searchURL + '?' + queryString;
-   fetch(url)
+  console.log(url);
+  fetch(url)
     .then(response => {
       if (response.ok) {
         return response.json();
@@ -49,8 +69,11 @@ function gitApiCall(searchTerm) {
       // DISPLAY ERRORS if the server connection works but the json data is broken
       throw new Error(response.statusText);
     })
-    .then(responseJson =>
-      displayResults(responseJson))
+    .then(responseJson => {
+      // let nextPageToken = responseJson.nextPageToken;
+      displayResults(responseJson)
+    
+    })
     .catch(error => console.log('Something went wrong. Try again later.', error));
 };
 
@@ -68,6 +91,15 @@ function watchForm() {
     navBar();
   });
 }
+
+// function watchLoadMoreResults(){
+//   let resultsCounter=0;
+//   $('.more_results').submit(event => {
+//     event.preventDefault();
+//     gitApiCall();
+//     })
+// }
+
 $(watchForm);
 
 
@@ -81,3 +113,5 @@ $(watchForm);
 // 7 We get thumbnail URL from youtube search results
 // 8 We add thumbnail picture to DOM as link
 // 9 We add think to thumbnail with video URL
+
+// add extra radial buttons and search parameters
