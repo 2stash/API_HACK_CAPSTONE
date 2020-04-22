@@ -8,20 +8,26 @@ function displayResults(responseJson) {
   for (let i = 0; i < responseJson.items.length; i++) {
 
     htmlUpdate +=
+    
     `
+    <br>
+    <div id="snippet">
     <a href='https://www.youtube.com/watch?v=${responseJson.items[i].id.videoId}' target='_blank'>
-<img src='${responseJson.items[i].snippet.thumbnails.high.url}' width= 15%>
-</a>
+    <img src='${responseJson.items[i].snippet.thumbnails.high.url}' class="video" width= 50%>
+    </a> <br>
+    <h4>${responseJson.items[i].snippet.title}</h4>
+    </div>
+  
     `
-/*      
-<section class='videos'>
-<hr>
-<h2>${responseJson.items[i].snippet.title}</h2>
-<p>${responseJson.items[i].snippet.description}</p>
-<a href='https://www.youtube.com/watch?v=${responseJson.items[i].id.videoId}' target='_blank'>
-<img src='${responseJson.items[i].snippet.thumbnails.high.url}' class='video' width= 15%>
-</a>
-</section>*/
+    
+/*`<section class='videos'>
+  
+  <p>${responseJson.items[i].snippet.title}</p>
+  
+  <a href='https://www.youtube.com/watch?v=${responseJson.items[i].id.videoId}' target='_blank'>
+  <img src='${responseJson.items[i].snippet.thumbnails.high.url}' class='video' width= 20%> 
+  </a>
+</section> `*/
 
 
 

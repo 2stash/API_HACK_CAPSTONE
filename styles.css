@@ -5,6 +5,7 @@
 body{
   padding: 0px;
   margin:0;
+  text-align: center;
 }
 nav{
   background-color: #333;
@@ -44,11 +45,15 @@ li a:hover:not(.active) {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  width: ;
+  width: 30%;
 }
 
 .hidden{
   display: none;
+}
+
+h1 {
+  margin-bottom: auto;
 }
 
 .usage_guide{
@@ -58,11 +63,11 @@ li a:hover:not(.active) {
   height:150px;
   font-size: 14px;
   border-style: solid;
-
 }
 
 form {
   text-align: center;
+  
 }
 
 h3,
@@ -92,22 +97,42 @@ p {
     
   }
 
-  form {
-    display: flex;
-    flex-direction: column;
-    width: 20%;
-    text-align: left;
-    padding-left: 40px;
-    position: relative;
-    left: 5%;
-  }
-
-  .usage_guide,
-  .results {
+  #snippet {
+    width: 100%;
     
   }
 
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    text-align: left;
+    padding-left: 40px;
+    position: relative;
+    left: 10%;
+  }
 
+  .results {
+    display: inline-block;
+    padding-left: 200px;
+    width:100%;
+    position: relative;
+    ;
+  }
+
+  #results-list {
+   
+  }
+
+  .video {
+    float: right;
+  }
+
+
+
+  .hidden{
+    display: none;
+  }
 
 
 
