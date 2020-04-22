@@ -7,45 +7,14 @@ body{
   margin:0;
   text-align: center;
 }
-nav{
-  background-color: #333;
-}
 
-nav p{
-  text-align: center;
-  color:white;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-
-li {
-  width: 25%;
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover:not(.active) {
-  background-color: #111;
-}
 
 #submit_button {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  width: 30%;
+  width: 40%;
+  display: inline-block;
 }
 
 .hidden{
@@ -60,7 +29,7 @@ h1 {
   margin: auto;
   padding: 0px 40px;
   width:40%;
-  height:150px;
+  height:160px;
   font-size: 14px;
   border-style: solid;
 }
@@ -124,9 +93,9 @@ p {
    
   }
 
-  .video {
+  /*.video {
     float: right;
-  }
+  }*/
 
 
 

@@ -10,12 +10,13 @@ function displayResults(responseJson) {
     htmlUpdate +=
     
     `
-    <br>
+    
     <div id="snippet">
     <a href='https://www.youtube.com/watch?v=${responseJson.items[i].id.videoId}' target='_blank'>
     <img src='${responseJson.items[i].snippet.thumbnails.high.url}' class="video" width= 50%>
-    </a> <br>
+    </a>
     <h4>${responseJson.items[i].snippet.title}</h4>
+    <br><br>
     </div>
   
     `
