@@ -1,3 +1,56 @@
+function displayWikiResults(responseJson) {
+
+  let htmlUpdateWiki =
+  `
+  <p>${responseJson.extract}</p>
+  `
+
+  $('.wiki_results').html(htmlUpdateWiki);
+  $('.results').removeClass('hidden');
+  $('.usage_guide').addClass('hidden');
+};
+
+
+
+function wikiApiCall(searchTerm) {
+  // const wikiBaseURL = 'https://en.wikipedia.org/w/api.php';
+  const wikiParams = {
+    // format: 'json',
+    // action: 'query',
+    // prop: 'extracts',
+    // redirects: 1,
+    // titles: searchTerm,
+    // origin: '*',
+    // exintro: '',
+    // explaintext: '',
+  };
+
+  const wikiURL =`https://en.wikipedia.org/api/rest_v1/page/summary/${searchTerm}`
+
+  // const wikiQueryString = formatQueryParams(wikiParams);
+  // const wikiURL = wikiBaseURL + '?' + wikiQueryString;
+  console.log(wikiURL);
+
+  fetch(wikiURL)
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+      // DISPLAY ERRORS if the server connection works but the json data is broken
+      throw new Error(response.statusText);
+    })
+    .then(responseJson => {
+      console.log(responseJson);
+      console.log(responseJson.extract);
+      displayWikiResults(responseJson)
+
+    })
+    .catch(error => console.log('Something went wrong. Try again later.', error));
+};
+
+
+
+
 function resultsHTML(responseJson) {
   return `<img src='${responseJson.items[0].snippet.thumbnails.high.url}'>`
 };
@@ -95,17 +148,9 @@ function watchForm() {
     const searchTerm = $('#js-search-term').val();
     //clearHTML();
     gitApiCall(searchTerm);
-    navBar();
+    wikiApiCall(searchTerm);
   });
 }
-
-// function watchLoadMoreResults(){
-//   let resultsCounter=0;
-//   $('.more_results').submit(event => {
-//     event.preventDefault();
-//     gitApiCall();
-//     })
-// }
 
 $(watchForm);
 
