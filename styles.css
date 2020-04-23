@@ -10,8 +10,9 @@ body{
 
 
 #submit_button {
+  ;
   text-align: center;
-  margin-left: auto;
+  margin-left: 0px;
   margin-right: auto;
   width: 40%;
   display: inline-block;
@@ -36,6 +37,7 @@ h1 {
 
 form {
   text-align: center;
+  align-items: left;
   
 }
 
@@ -88,11 +90,12 @@ p {
     position: relative;
     ;
   }
-
-  #results-list {
-   
+  
+  .wiki_results {
+    padding: 0px 70px;
   }
 
+ 
   /*.video {
     float: right;
   }*/
