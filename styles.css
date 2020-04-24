@@ -1,23 +1,33 @@
 *{
   box-sizing: border-box;
+
 }
 
 body{
   padding: 0px;
   margin:0;
   text-align: center;
+  background: url("background.jpg") no-repeat center center fixed;
+  background-size: cover;
 }
 
 
 #submit_button {
-  ;
   text-align: center;
   margin-left: 0px;
   margin-right: auto;
-  width: 40%;
-  display: inline-block;
+  width: 30%;
+  border: none;
+  padding: 3px;
+  box-shadow: 5px 8px 16px 0 rgba(0, 0, 0, 0.349);
+  font-family: 'Patrick Hand', cursive;
+  font-size: 14px;
 }
 
+#submit_button:hover {
+  background-color: rgb(124, 122, 122);
+  color: rgb(255, 255, 255);
+}
 .hidden{
   display: none;
 }
@@ -28,17 +38,18 @@ h1 {
 
 .usage_guide{
   margin: auto;
-  padding: 0px 40px;
+  padding: 40px;
   width:40%;
-  height:160px;
-  font-size: 14px;
-  border-style: solid;
+  font-size: 16px;
+  border-style: outset;
+  background-color: rgba(255, 255, 255, 0.432);
 }
 
 form {
   text-align: center;
-  align-items: left;
-  
+  padding-bottom: 40px;
+  background-color: rgba(255, 255, 255, 0.432);
+  box-shadow: 5px 8px 16px 0 rgba(0, 0, 0, 0.349)
 }
 
 h3,
@@ -47,8 +58,23 @@ h1 {
 
 }
 
+#js-search-term {
+  padding: 5px;
+  box-shadow: 5px 8px 16px 0 rgba(0, 0, 0, 0.349);
+  
+}
+
+label {
+  font-family: 'Permanent Marker', cursive;
+  color:rgb(247, 247, 247);
+  text-shadow: 2px 2px rgba(59, 57, 59, 0.521);
+  font-size: 40px;
+}
+
 p {
   text-align: left;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 18px;
 }
 
 .results {
@@ -56,8 +82,24 @@ p {
   
 }
 
+.wiki_results {
+  padding: 20px 70px;
+  background-color: rgba(255, 255, 255, 0.432);
+  box-shadow: 5px 8px 16px 0 rgba(0, 0, 0, 0.349)
+}
+
+h2 {
+  font-family: 'Indie Flower', cursive;
+  color:rgb(247, 247, 247);
+  text-shadow: 2px 2px rgba(59, 57, 59, 0.521);
+  font-size: 40px;
+  padding: 10px;
+}
+
 #results-list {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.432);
+  padding: 50px 70px;
+  box-shadow: 5px 8px 16px 0 rgba(0, 0, 0, 0.349)
 }
 
 @media screen and (min-width: 700px) { 
@@ -70,7 +112,11 @@ p {
 
   #snippet {
     width: 100%;
-    
+  }
+
+
+  #js-search-term {
+    width: 70%
   }
 
   form {
@@ -86,14 +132,13 @@ p {
   .results {
     display: inline-block;
     padding-left: 200px;
-    width:100%;
+    width:60%;
     position: relative;
+
     ;
   }
   
-  .wiki_results {
-    padding: 0px 70px;
-  }
+
 
  
   /*.video {
@@ -105,142 +150,3 @@ p {
   .hidden{
     display: none;
   }
-
-
-
-
-/* *{
-  box-sizing: border-box;
-}
-
-body{
-  padding: 0px;
-  margin:0;
-}
-nav{
-  background-color: #333;
-}
-
-nav p{
-  text-align: center;
-  color:white;
-}
-
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-
-nav li {
-  width: 25%;
-  float: left;
-}
-
-nav li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-nav li a:hover:not(.active) {
-  background-color: #111;
-}
-
-#submit_button {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  width: ;
-}
-
-.hidden{
-  display: none;
-}
-
-.usage_guide{
-  margin: auto;
-  padding: 0px 40px;
-  width:40%;
-  height:150px;
-  font-size: 14px;
-  border-style: solid;
-
-}
-
-form {
-  text-align: center;
-}
-
-h3,
-h1 {
-  text-align: center;
-
-}
-
-p {
-  text-align: left;
-}
-
-.results {
-  text-align: center;
-  
-}
-
-#results-list {
-  background-color: white;
-}
-
-@media screen and (min-width: 700px) { 
-
-  #page {
-    display: flex;
-    position: absolute;
-    
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-    width: 20%;
-    text-align: left;
-    padding-left: 40px;
-    position: relative;
-    left: 5%;
-  }
-
-  .usage_guide,
-  .results {
-    
-  }
-
-
-
-  */
-  /*.usage_guide {
-    position: relative;
-  
-  }
-
-  .result {
-    position: relative;
-    ;
-  }*/
-
-}
-
-/*.video{
-
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width:80%;
-}*/
-
-/* .active {
-  background-color: #4CAF50;
-} */
