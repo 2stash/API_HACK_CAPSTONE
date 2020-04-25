@@ -16,42 +16,31 @@
 
 <body>
   <h1>Home School Your Kids!</h1>
-<br><br><br>
+  <br><br><br>
   <div id="page">
-  <form>
-    <br><br>
-    <label for='js-search-term'>Search a topic!</label> <br>
-    <input id='js-search-term' type='text' name='js-search-term' placeholder="What do you want to learn?"><br><br>
-    <section id="buttons">
-      <input id='submit_button' type='submit' value='Submit'>
-      <button id='submit_button' type ='button' class='random_results'>Click me</button>
+    <form>
+      <br><br>
+      <label for='js-search-term'>Search a topic!</label> <br>
+      <input id='js-search-term' type='text' name='js-search-term' placeholder="What do you want to learn?"><br>
+      <input id='submit_button' type='submit' value='Submit'><br>
+      <button id='submit_button' type='button' class='random_results'>Suggest a Topic</button>
+    </form>
+
+    <section class='usage_guide'>
+      <h3>Welcome!</h3>
+      <p>This handy dandy app was created to help make things easier when homeschooling your little ones.
+        Feel free to search any topic using the search bar above to get an explanation of the topic as well
+        as related videos. Don't have a specific topic in mind? No problem! Click on the 'Suggest a Topic!' button
+        to get a suggested topic to start off with!</p>
     </section>
-  </form>
 
-  
-  <section class='usage_guide'>
-    <h3>Welcome!</h3>
-    <p>This handy dandy app was created to help make things easier when homeschooling your little ones.
-      Feel free to search any topic using the search bar above to get an explanation of the topic as well 
-      as related videos. Don't have a specific topic in mind? No problem! Click on the 'Click me!' button
-      to get a suggested topic to start off with!</p>
-
-  </section>
-  
-  
-  
-  
-  <section class='results hidden'>
-    <h2>Here's a quick definition:</h2>
-    <div class='wiki_results'></div>
-    <h2>Here are some helpful videos:</h2>
-    <ul id='results-list'></ul>
-  </section>
-</div>
-
-
-
-
+    <section class='results hidden'>
+      <h2>Here's a quick definition:</h2>
+      <div class='wiki_results'></div>
+      <h2>Here are some helpful videos:</h2>
+      <ul id='results-list'></ul>
+    </section>
+  </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
     crossorigin="anonymous"></script>
