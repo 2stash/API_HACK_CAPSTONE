@@ -16,12 +16,14 @@ body{
   text-align: center;
   margin-left: 0px;
   margin-right: auto;
-  width: 30%;
+  width: 200px;
   border: none;
   padding: 3px;
   box-shadow: 5px 8px 16px 0 rgba(0, 0, 0, 0.349);
   font-family: 'Patrick Hand', cursive;
   font-size: 14px;
+  margin-top: 15px;
+  margin-top: 15px;
 }
 
 #submit_button:hover {
@@ -37,9 +39,11 @@ h1 {
 }
 
 .usage_guide{
-  margin: auto;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right:auto;
   padding: 40px;
-  width:40%;
+  width:80%; 
   font-size: 16px;
   border-style: outset;
   background-color: rgba(255, 255, 255, 0.432);
@@ -59,6 +63,7 @@ h1 {
 }
 
 #js-search-term {
+  width:200px;
   padding: 5px;
   box-shadow: 5px 8px 16px 0 rgba(0, 0, 0, 0.349);
   
@@ -102,7 +107,7 @@ h2 {
   box-shadow: 5px 8px 16px 0 rgba(0, 0, 0, 0.349)
 }
 
-@media screen and (min-width: 700px) { 
+@media screen and (min-width: 1000px) { 
 
   #page {
     display: flex;
@@ -114,10 +119,6 @@ h2 {
     width: 100%;
   }
 
-
-  #js-search-term {
-    width: 70%
-  }
 
   form {
     display: flex;
@@ -138,12 +139,10 @@ h2 {
     ;
   }
   
-
-
+  .usage_guide{
+    width:40%; 
  
-  /*.video {
-    float: right;
-  }*/
+  }
 
 
 
