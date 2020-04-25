@@ -22,6 +22,7 @@ body{
   box-shadow: 5px 8px 16px 0 rgba(0, 0, 0, 0.349);
   font-family: 'Patrick Hand', cursive;
   font-size: 14px;
+
 }
 
 #submit_button:hover {
@@ -34,15 +35,21 @@ body{
 
 h1 {
   margin-bottom: auto;
+  font-family: 'Gochi Hand', cursive;
+  font-size: 60px;
+  color: white;
+  text-shadow: 4px 2px rgba(0, 0, 0, 0.349);
+
 }
 
 .usage_guide{
   margin: auto;
-  padding: 40px;
+  padding: 0px 40px;
   width:40%;
   font-size: 16px;
-  border-style: outset;
+  box-shadow: 5px 8px 16px 0 rgba(0, 0, 0, 0.349);
   background-color: rgba(255, 255, 255, 0.432);
+  color: rgb(73, 73, 73);
 }
 
 form {
@@ -85,7 +92,15 @@ p {
 .wiki_results {
   padding: 20px 70px;
   background-color: rgba(255, 255, 255, 0.432);
-  box-shadow: 5px 8px 16px 0 rgba(0, 0, 0, 0.349)
+  box-shadow: 5px 8px 16px 0 rgba(0, 0, 0, 0.349);
+  color: rgb(73, 73, 73);
+}
+
+h3 {
+  font-family: 'Indie Flower', cursive;
+  color:rgb(247, 247, 247);
+  text-shadow: 2px 2px rgba(59, 57, 59, 0.521);
+  font-size: 40px;
 }
 
 h2 {
@@ -116,17 +131,23 @@ h2 {
 
 
   #js-search-term {
-    width: 70%
+    width: 70%;
+    text-align: center;
+    margin: auto;
   }
 
   form {
     display: flex;
     flex-direction: column;
     width: 30%;
-    text-align: left;
-    padding-left: 40px;
+    text-align: center;
+    
     position: relative;
     left: 10%;
+  }
+
+  #buttons {
+   
   }
 
   .results {
@@ -135,7 +156,6 @@ h2 {
     width:60%;
     position: relative;
 
-    ;
   }
   
 
