@@ -52,7 +52,7 @@ function formatQueryParams(params) {
 
 //calls youtube API and calls displayResults function
 function gitApiCall(searchTerm) {
-  const apiKey = 'AIzaSyBjt1dpL_IVRvFGRq8ToxGCyPmU7RFO1do';
+  const apiKey = 'AIzaSyBN7MKE3zgek0BWJXJn7A9_ua4BxDLLSR4';
   // const apiKey = 'AIzaSyD1EP6ZMbHiMp_fLWaVB4zbf36IuqIGVSY';
   const searchURL = 'https://www.googleapis.com/youtube/v3/search';
   const params = {
